@@ -1,6 +1,17 @@
 <<<<<<< HEAD
 # toko-pupuk-organik
 Pemasaran Pupuk Organik di desa Kertagenah Tengah. Dari kelompok KKN (Kuliah Kernyata Nayat) Universitas Annuaqayah posko 57
+# Teknologi yang Digunakan
+Proyek ini dibangun dengan bahasa JavaScript, menggunakan kerangka kerja React dengan navigasi page memanfaatkan React Router v6. Untuk back end dibuat sederhana karena masih tahap pengembangan sehinnga kami gunakan localStorage sebagai pengolahan data sementara.
+# Fitur-Fitur
+Diantara fitur-fitur aplikasi ini adalah:
+1. Pemesanan pupuk organik via online
+2. Menggunakan beberapa metode pembayana (transfer bank, QRIS, dan COD)
+3. Melihat riwayat detail transaksi
+4. Memberikan komentar dan penilaian produk
+# Petunjuk Penggunaan
+Website ini bisa diakses secara publik, namun untuk pembelian/pemesanan dan pemberian komentar/rating perlu sign (daftar) user, setelah itu baru bisa membeli dan komentar produk.
+# 
 =======
 # Getting Started with Create React App
 
