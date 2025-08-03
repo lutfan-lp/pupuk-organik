@@ -20,15 +20,6 @@ const Home = () => {
         setReviews(sorted);
     }, []);
 
-    const renderStars = (rating) => {
-        return [...Array(5)].map((_, i) => (
-            <i
-                key={i}
-                className={`fa-star ${i < rating ? "fas text-warning" : "far text-muted"}`}
-            ></i>
-        ));
-    };
-
     const pupukImages = [pupuk, pupuk1, pupuk2, pupuk3, pupuk4, pupuk5];
 
     return (
