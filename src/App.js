@@ -1,0 +1,25 @@
+import { Link } from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
+import Navbar from "./components/Navbar";
+import { getCurrentUser, logoutUser } from "./utils/storage";
+
+function App() {
+	const user = getCurrentUser();
+
+	const handleLogout = () => {
+		logoutUser();
+		window.location.reload();
+	};
+
+	return (
+		<div className="container py-4">
+			
+			<Navbar />
+
+			<hr />
+			<AppRoutes />
+		</div>
+	);
+}
+
+export default App;

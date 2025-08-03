@@ -1,0 +1,15 @@
+@keyframes scrollX {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.gallery-scroll {
+    display: flex;
+    width: 200%;
+    animation: scrollX 10s linear infinite;
+}
