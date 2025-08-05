@@ -1,3 +1,4 @@
+// Orders.js
 import { getCurrentUser, getOrders } from "../utils/storage";
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +15,19 @@ export default function Orders() {
     const allOrders = getOrders();
     const userOrders = allOrders.filter((order) => order.userEmail === user.email);
 
+    const getBadge = (status) => {
+        switch (status) {
+            case "Diproses":
+                return <span className="badge bg-warning text-dark">{status}</span>;
+            case "Dikirim":
+                return <span className="badge bg-primary">{status}</span>;
+            case "Selesai":
+                return <span className="badge bg-success">{status}</span>;
+            default:
+                return <span className="badge bg-secondary">{status}</span>;
+        }
+    };
+
     return (
         <div className="container py-5" style={{ maxWidth: 800 }}>
             <h2 className="mb-4 text-center">Riwayat Pesanan Anda</h2>
@@ -26,14 +40,13 @@ export default function Orders() {
                         <div key={order.id} className="list-group-item list-group-item-action">
                             <div className="d-flex justify-content-between">
                                 <strong>{order.tanggal.slice(0, 10)}</strong>
-                                <span>Status: <span className="badge bg-warning text-dark">{order.status}</span></span>
+                                {getBadge(order.status)}
                             </div>
-                            <div>{order.quantity} sak - {order.metodePembayaran}</div>
+                            <div>{order.quantity} sak - <em>{order.metodePembayaran}</em></div>
                         </div>
                     ))}
                 </div>
             )}
         </div>
-
     );
 }

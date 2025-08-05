@@ -7,10 +7,14 @@ import Payment from "../pages/Payment";
 import Orders from "../pages/Orders";
 import Reviews from "../pages/Reviews";
 import Promotions from "../pages/Promotions";
+import AdminPanel from "../pages/AdminPanel";
 
 function AppRoutes() {
 	return (
 		<Routes>
+			{/* Admin panel */}
+			<Route path="/admin" element={<AdminPanel />} />
+
 			<Route path="/" element={<Home />} />
 			<Route path="/home" element={<Home />} />
 			<Route path="/login" element={<Login />} />

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getReviews } from "../utils/storage";
 import { Carousel } from "react-bootstrap";
 import pupukImage from "../assets/pupuk.jpg"
+import { getHargaPerSak } from "../utils/storage";
 // import gambar untuk galeri
 import pupuk from "../assets/pupuk.jpg"
 import pupuk1 from "../assets/pupuk1.jpg";
@@ -21,6 +22,8 @@ const Home = () => {
     }, []);
 
     const pupukImages = [pupuk, pupuk1, pupuk2, pupuk3, pupuk4, pupuk5];
+    
+    const hargaPerSak = getHargaPerSak();
 
     return (
         <div>
@@ -30,11 +33,13 @@ const Home = () => {
 
                         {/* Kiri: Teks */}
                         <div className="col-md-6 text-center text-md-start">
-                            <h1 className="display-4 fw-bold">Let's bring it home.</h1>
+                            <h1 className="display-4 fw-bold">Pupuk Orgainik Ramah Lingkungan</h1>
                             <p className="lead">
                                 Mengenalkan <strong>Pupuk Organik</strong> — solusi alami yang memberi hasil panen maksimal tanpa mencemari tanah.
                             </p>
-                            <h4 className="fw-semibold mb-3">Rp69.000</h4>
+                            <h4 className="fw-semibold mb-3">
+                                <strong>Rp {hargaPerSak.toLocaleString("id-ID")}</strong>
+                            </h4>
                             <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
                                 <a href="/payment" className="btn btn-primary px-4">Pesan Sekarang</a>
                                 <a href="#galeri" className="btn btn-outline-light px-4">Lihat Galeri</a>
@@ -111,7 +116,7 @@ const Home = () => {
             </section>
 
             {/* GALERI PUPUK (MARQUEE) */}
-            <section id = "galeri" className="py-5 bg-light">
+            <section id="galeri" className="py-5 bg-light">
                 <div className="container">
                     <h3 className="text-center mb-4">Galeri Pupuk</h3>
                     <div className="overflow-hidden">

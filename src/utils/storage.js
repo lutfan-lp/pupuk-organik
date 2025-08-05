@@ -35,3 +35,14 @@ export function getReviews() {
 export function saveReviews(rev) {
     localStorage.setItem("reviews", JSON.stringify(rev));
 }
+
+// Harga
+export function getHargaPerSak() {
+    const harga = localStorage.getItem("hargaPerSak");
+    return harga ? parseInt(harga) : 25000; // default Rp25.000
+}
+
+export function setHargaPerSak(harga) {
+    localStorage.setItem("hargaPerSak", harga.toString());
+}
+
