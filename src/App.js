@@ -1,5 +1,6 @@
 import AppRoutes from "./routes/AppRoutes";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { getCurrentUser, logoutUser } from "./utils/storage";
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
 
 			<hr />
 			<AppRoutes />
+
+			<Footer />
 		</div>
 	);
 }
